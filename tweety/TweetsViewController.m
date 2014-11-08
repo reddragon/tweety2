@@ -87,7 +87,7 @@
                 [self.tweets addObjectsFromArray:tweets];
             }
             NSLog(@"Tweet list final size: %ld", self.tweets.count);
-            // [self.tweetList reloadData];
+            [self.tweetList reloadData];
             [self.tweetList reloadData];
         } else {
             NSLog(@"Error: %@", error);
@@ -127,6 +127,7 @@
     return size.height + 1;
 }
 */
+
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TweetViewCell* cell = [self.tweetList dequeueReusableCellWithIdentifier:@"TweetViewCell"];

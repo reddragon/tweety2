@@ -36,7 +36,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PPW-wi-t4b">
-                        <rect key="frame" x="76" y="8" width="33" height="11"/>
+                        <rect key="frame" x="76" y="8" width="33" height="9"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -126,6 +126,7 @@
                     <constraint firstItem="3TC-dB-tUi" firstAttribute="leading" secondItem="p6y-x5-pWw" secondAttribute="trailing" constant="8" id="Tmw-7g-dD2"/>
                     <constraint firstAttribute="bottom" secondItem="MeY-ze-KFb" secondAttribute="bottom" constant="8" id="VTF-Er-fRW"/>
                     <constraint firstItem="p6y-x5-pWw" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Wvu-L1-zQX"/>
+                    <constraint firstItem="3TC-dB-tUi" firstAttribute="top" secondItem="PPW-wi-t4b" secondAttribute="bottom" constant="10" id="fwi-mW-fEU"/>
                     <constraint firstAttribute="bottom" secondItem="MLa-rm-Jez" secondAttribute="bottom" constant="8" id="hu8-qY-LZh"/>
                     <constraint firstItem="MeY-ze-KFb" firstAttribute="leading" secondItem="kWw-Af-pLu" secondAttribute="trailing" constant="8" id="hxh-Yh-RPq"/>
                     <constraint firstItem="PlG-ip-seT" firstAttribute="leading" secondItem="p6y-x5-pWw" secondAttribute="trailing" constant="8" id="isD-Fe-OPd"/>
@@ -137,6 +138,11 @@
                     <constraint firstAttribute="bottom" secondItem="a4X-ui-wH3" secondAttribute="bottom" constant="8" id="yqP-2k-IUv"/>
                     <constraint firstAttribute="trailing" secondItem="My2-5c-GoI" secondAttribute="trailing" constant="20" id="yzo-Aj-kYV"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="A0i-Mh-HO1"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="favoriteButton" destination="MeY-ze-KFb" id="tQ5-JN-8wK"/>

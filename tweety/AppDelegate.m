@@ -12,6 +12,7 @@
 #import "User.h"
 #import "Tweet.h"
 #import "TweetsViewController.h"
+#import "MainScreenController.h"
 
 @interface AppDelegate ()
 
@@ -27,6 +28,9 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDidLogout) name:UserDidLogoutNotification object:nil];
     
     User* currentUser = [User user];
+    MainScreenController* msc = [[MainScreenController alloc] init];
+    self.window.rootViewController = msc;
+    /*
     if (currentUser != nil) {
         NSLog(@"Welcome %@", currentUser.name);
         TweetsViewController* tvc = [[TweetsViewController alloc] init];
@@ -39,7 +43,7 @@
         NSLog(@"Not logged in");
         LoginViewController* lvc = [[LoginViewController alloc] init];
         self.window.rootViewController = lvc;
-    }
+    } */
     
     return YES;
 }
