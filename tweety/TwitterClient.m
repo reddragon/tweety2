@@ -132,4 +132,21 @@ NSString* const kBaseUrl = @"https://api.twitter.com";
     }];
 }
 
+- (void)getTweetsWithOperation:(NSString*)operation params:(NSDictionary*)params
+                    completion:(void(^)(NSArray*, NSError*))completion {
+    NSString* endpoint;
+    if ([operation isEqualToString:@"home"]) {
+        endpoint = @"1.1/statuses/home_timeline.json";
+    } else if ([operation isEqualToString:@"mentions"]) {
+        endpoint = @"1.1/statuses/mentions_timeline.json";
+    }
+    [self GET:endpoint parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSArray* tweets = [Tweet tweetsWithArray:responseObject];
+        completion(tweets, nil);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error while fetching tweets: %@", error);
+        completion(nil, error);
+    }];
+}
+
 @end

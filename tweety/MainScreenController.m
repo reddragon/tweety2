@@ -9,6 +9,7 @@
 #import "MainScreenController.h"
 #import "HamburgerMenuController.h"
 #import "TweetsViewController.h"
+#import "MentionsViewController.h"
 
 @interface MainScreenController ()
 @property UIViewController* menuVC;
@@ -41,11 +42,11 @@
     
     frame2.origin.x = 0;
     frame2.size.width = menuSize.width;
-    self.menuVC = [[HamburgerMenuController alloc] init];
+    HamburgerMenuController* menuVC = [[HamburgerMenuController alloc] init];
+    menuVC.delegate = self;
+    self.menuVC = menuVC;
     self.menuVC.view.frame = frame2;
     self.menuVC.view.bounds = frame2;
-    
-    // self.containerView.conte
     
     CGRect frame3 = self.containerView.bounds;
     frame3.origin.x = self.menuSize.width;
@@ -59,56 +60,51 @@
     [self setNeedsStatusBarAppearanceUpdate];
 }
 
+- (void) foldMenu {
+    [UIView animateWithDuration:0.4 animations:^{
+        CGRect frame1 = self.menuVC.view.frame;
+        frame1.origin.x -= self.menuSize.width;
+        self.menuVC.view.frame = frame1;
+        
+        CGRect frame2 = self.contentVC.view.frame;
+        frame2.origin.x -= self.menuSize.width;
+        self.contentVC.view.frame = frame2;
+    }];
+}
+
+- (void) expandMenu {
+    [UIView animateWithDuration:0.4 animations:^{
+        CGRect frame1 = self.menuVC.view.frame;
+        frame1.origin.x += self.menuSize.width;
+        self.menuVC.view.frame = frame1;
+        
+        CGRect frame2 = self.contentVC.view.frame;
+        frame2.origin.x += self.menuSize.width;
+        self.contentVC.view.frame = frame2;
+        
+    }];
+}
+
+- (void)onMentions {
+    NSLog(@"Mentions fired");
+    [self foldMenu];
+    TweetsViewController* mvc = [[TweetsViewController alloc] init];
+    mvc.operation = @"mentions";
+    UINavigationController* nvc = (UINavigationController*) self.contentVC;
+    [nvc pushViewController:mvc animated:YES ];
+}
+
 -(UIStatusBarStyle)preferredStatusBarStyle{
     return UIStatusBarStyleLightContent;
 }
 
 - (void)onPan:(UIGestureRecognizer*)sender {
-    NSLog(@"onPan");
     if (sender.state == UIGestureRecognizerStateEnded) {
         CGPoint p = [self.panGesture velocityInView:self.containerView];
         if (p.x > 100) {
-            
-            [UIView animateWithDuration:0.4 animations:^{
-                // CGRect frame = self.containerView.bounds;
-                // frame.origin.x = -160;
-                // self.containerView.bounds = frame;
-                /*
-                CGRect frame3 = self.containerView.bounds;
-                frame3.origin.x = 0;
-                self.containerView.bounds = frame3;
-                */
-                
-                CGRect frame1 = self.menuVC.view.frame;
-                frame1.origin.x += self.menuSize.width;
-                self.menuVC.view.frame = frame1;
-                
-                CGRect frame2 = self.contentVC.view.frame;
-                frame2.origin.x += self.menuSize.width;
-                self.contentVC.view.frame = frame2;
-                
-            }];
-            /*
-            NSLog(@"Left");
-            CGRect frame = self.containerView.bounds;
-            frame.origin.x = -320;
-            self.containerView.bounds = frame;
-            */
+            [self expandMenu];
         } else if (p.x < -100) {
-            [UIView animateWithDuration:0.4 animations:^{
-                /*
-                CGRect frame3 = self.containerView.bounds;
-                frame3.origin.x = 160;
-                self.containerView.bounds = frame3;
-                */
-                CGRect frame1 = self.menuVC.view.frame;
-                frame1.origin.x -= self.menuSize.width;
-                self.menuVC.view.frame = frame1;
-                
-                CGRect frame2 = self.contentVC.view.frame;
-                frame2.origin.x -= self.menuSize.width;
-                self.contentVC.view.frame = frame2;
-            }];
+            [self foldMenu];
         }
     }
 }

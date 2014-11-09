@@ -18,6 +18,6 @@
 - (void)updateStatusWithParams:(NSDictionary*)params completion:(void(^)(NSError* error))completion;
 - (void)retweetWithParams:(NSDictionary*)params completion:(void(^)(NSError* error))completion;
 - (void)favoriteWithParams:(NSDictionary*)params completion:(void(^)(NSError* error))completion destroy:(BOOL)destroy;
-
+- (void)getTweetsWithOperation:(NSString*)operation params:(NSDictionary*)params completion:(void(^)(NSArray*, NSError*))completion;
 
 @end

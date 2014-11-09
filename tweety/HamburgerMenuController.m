@@ -15,6 +15,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *profileImage;
 @property (strong, nonatomic) IBOutlet UILabel *userName;
 @property (strong, nonatomic) IBOutlet UILabel *handle;
+- (IBAction)onMentions:(id)sender;
 
 @end
 
@@ -49,4 +50,9 @@
 }
 */
 
+- (IBAction)onMentions:(id)sender {
+    if (self.delegate != nil) {
+        [self.delegate onMentions];
+    }
+}
 @end

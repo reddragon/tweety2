@@ -28,6 +28,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if (self.operation == nil) {
+        self.operation = @"home";
+    }
     self.tweets = [[NSMutableArray alloc] init];
     self.tweetList.delegate = self;
     self.tweetList.dataSource = self;
@@ -43,14 +46,18 @@
     [loadingView startAnimating];
     loadingView.center = tableFooterView.center;
     [tableFooterView addSubview:loadingView];
-    self.tweetList.tableFooterView = tableFooterView;
-    UIBarButtonItem* composeButton = [[UIBarButtonItem alloc] initWithTitle:@"Compose" style:UIBarButtonItemStylePlain target:self action:@selector(onCompose:)];
-    UIBarButtonItem* logoutButton = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(onLogout:)];
     
-    self.navigationItem.leftBarButtonItem = logoutButton;
-    self.navigationItem.rightBarButtonItem = composeButton;
-    self.navigationItem.title = @"Home";
-
+    if ([self.operation isEqualToString:@"home"]) {
+        self.tweetList.tableFooterView = tableFooterView;
+        UIBarButtonItem* composeButton = [[UIBarButtonItem alloc] initWithTitle:@"Compose" style:UIBarButtonItemStylePlain target:self action:@selector(onCompose:)];
+        UIBarButtonItem* logoutButton = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(onLogout:)];
+    
+        self.navigationItem.leftBarButtonItem = logoutButton;
+        self.navigationItem.rightBarButtonItem = composeButton;
+        self.navigationItem.title = @"Home";
+    } else if ([self.operation isEqualToString:@"mentions"]) {
+        self.navigationItem.title = @"Mentions";
+    }
     
     [self loadDataToTop:YES];
 }
@@ -66,7 +73,7 @@
             params = [[NSDictionary alloc] initWithObjectsAndKeys:t.tId, @"max_id", nil];
         }
     }
-    [[TwitterClient sharedInstance] homeTimelineWithParams:params completion:^(NSArray *tweets, NSError *error) {
+    [[TwitterClient sharedInstance] getTweetsWithOperation:self.operation params:params completion:^(NSArray *tweets, NSError *error) {
         if (tweets != nil) {
             // Remove fake tweets
             NSMutableArray* fakeArray = [[NSMutableArray alloc] init];
@@ -81,7 +88,7 @@
             
             if (refreshFromTop) {
                 NSIndexSet *indexes = [NSIndexSet indexSetWithIndexesInRange:
-                                   NSMakeRange(0, tweets.count)];
+                                       NSMakeRange(0, tweets.count)];
                 [self.tweets insertObjects:tweets atIndexes:indexes];
             } else {
                 [self.tweets addObjectsFromArray:tweets];

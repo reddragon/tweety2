@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HamburgerMenuController : UIViewController
+@protocol HamburgerMenuDelegate <NSObject>
 
+- (void)onMentions;
+
+@end
+
+
+@interface HamburgerMenuController : UIViewController
+@property (strong, nonatomic) id<HamburgerMenuDelegate> delegate;
 @end
