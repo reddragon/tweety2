@@ -69,16 +69,6 @@ NSString* const kBaseUrl = @"https://api.twitter.com";
     }];
 }
 
-- (void)homeTimelineWithParams:(NSDictionary*)params completion:(void (^)(NSArray* tweets, NSError* error))completion {
-    [self GET:@"1.1/statuses/home_timeline.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSArray* tweets = [Tweet tweetsWithArray:responseObject];
-        completion(tweets, nil);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error while fetching tweets: %@", error);
-        completion(nil, error);
-    }];
-}
-
 - (void)updateStatusWithParams:(NSDictionary *)params completion:(void (^)(NSError *))completion {
     [self POST:@"1.1/statuses/update.json" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"Looks like it succeeded: %@", responseObject);
@@ -139,6 +129,8 @@ NSString* const kBaseUrl = @"https://api.twitter.com";
         endpoint = @"1.1/statuses/home_timeline.json";
     } else if ([operation isEqualToString:@"mentions"]) {
         endpoint = @"1.1/statuses/mentions_timeline.json";
+    } else if ([operation isEqualToString:@"user_timeline"]) {
+        endpoint = @"1.1/statuses/user_timeline.json";
     }
     [self GET:endpoint parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray* tweets = [Tweet tweetsWithArray:responseObject];

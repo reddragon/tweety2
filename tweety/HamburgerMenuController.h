@@ -11,6 +11,7 @@
 @protocol HamburgerMenuDelegate <NSObject>
 
 - (void)onMentions;
+- (void)onProfile;
 
 @end
 

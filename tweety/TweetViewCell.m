@@ -118,7 +118,6 @@
         [self.favoriteButton setImage:favImage forState:UIControlStateNormal];
         [self.favoriteButton setImage:favGrayImage forState:UIControlStateHighlighted];
     } else {
-        NSLog(@"Is not favorited");
         [self.favoriteButton setImage:favGrayImage forState:UIControlStateNormal];
         [self.favoriteButton setImage:favImage forState:UIControlStateHighlighted];
     }

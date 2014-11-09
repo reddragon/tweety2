@@ -9,7 +9,7 @@
 #import "MainScreenController.h"
 #import "HamburgerMenuController.h"
 #import "TweetsViewController.h"
-#import "MentionsViewController.h"
+#import "ProfileViewController.h"
 
 @interface MainScreenController ()
 @property UIViewController* menuVC;
@@ -92,6 +92,15 @@
     mvc.operation = @"mentions";
     UINavigationController* nvc = (UINavigationController*) self.contentVC;
     [nvc pushViewController:mvc animated:YES ];
+}
+
+- (void)onProfile {
+    NSLog(@"Profile fired");
+    [self foldMenu];
+    ProfileViewController* pvc = [[ProfileViewController alloc] init];
+    // mvc.operation = @"mentions";
+    UINavigationController* nvc = (UINavigationController*) self.contentVC;
+    [nvc pushViewController:pvc animated:YES ];
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle{

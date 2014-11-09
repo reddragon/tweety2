@@ -18,8 +18,10 @@
         self.user = [[User alloc] initWithDictionary:dictionary[@"user"]];
         NSString* createdAt = dictionary[@"created_at"];
         NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
-        formatter.dateFormat = @"EEE MMM d hh:mm:ss Z y";
+        formatter.dateFormat = @"EEE MMM dd hh:mm:ss Z yyyy";
         self.createdAt = [formatter dateFromString:createdAt];
+        NSLog(@"Created at: %@ %@", createdAt, self.createdAt);
+        
         NSString* imageURLStr = dictionary[@"user"][@"profile_image_url"];
         self.imageURL = [NSURL URLWithString:imageURLStr];
         self.biggerImageURL = [NSURL URLWithString:[imageURLStr stringByReplacingOccurrencesOfString:@"normal" withString:@"bigger"]];
