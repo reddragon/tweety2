@@ -8,7 +8,7 @@
 
 #import "LoginViewController.h"
 #import "TwitterClient.h"
-#import "TweetsViewController.h"
+#import "MainScreenController.h"
 
 @interface LoginViewController ()
 - (IBAction)onLoginButtonPressed:(id)sender;
@@ -42,13 +42,8 @@
         if (user != nil) {
             // Modally present something;
             NSLog(@"Welcome to %@", user.name);
-            TweetsViewController* tvc = [[TweetsViewController alloc] init];
-            UINavigationController* nc = [[UINavigationController alloc] initWithRootViewController:tvc];
-            nc.navigationBar.barTintColor = [UIColor colorWithRed:85/255.0 green:172/255.0 blue:238.0/255.0 alpha:1.0];
-            nc.navigationBar.tintColor = [UIColor whiteColor];
-            [nc.navigationBar setBarStyle:UIStatusBarStyleLightContent];
-            
-            [self presentViewController:nc animated:YES completion:nil];
+            MainScreenController* msc = [[MainScreenController alloc] init];
+            [self presentViewController:msc animated:YES completion:nil];
         } else {
             // Error!
             NSLog(@"Uh oh! Error: %@", error);

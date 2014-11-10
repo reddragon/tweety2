@@ -17,6 +17,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *handle;
 - (IBAction)onMentions:(id)sender;
 - (IBAction)onProfile:(id)sender;
+- (IBAction)onLogout:(id)sender;
+
 
 @end
 
@@ -60,6 +62,12 @@
 - (IBAction)onProfile:(id)sender {
     if (self.delegate != nil) {
         [self.delegate onProfile];
+    }
+}
+
+- (IBAction)onLogout:(id)sender {
+    if (self.delegate != nil) {
+        [self.delegate onLogout];
     }
 }
 @end

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MiscellaneousViewCounter">
+            <connections>
+                <outlet property="location" destination="0Ci-fA-TUZ" id="BOo-bp-Lcv"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDq-3k-80J">
+                    <rect key="frame" x="137" y="529" width="9" height="35"/>
+                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="30"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="alb-13-TD3">
+                    <rect key="frame" x="156" y="529" width="9" height="35"/>
+                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="30"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIV-4O-7zG">
+                    <rect key="frame" x="175" y="529" width="9" height="35"/>
+                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="30"/>
+                    <color key="textColor" red="0.33333333329999998" green="0.67450980390000004" blue="0.93333333330000001" alpha="1" colorSpace="deviceRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAN FRANCISCO, CA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ci-fA-TUZ">
+                    <rect key="frame" x="109" y="278" width="104" height="12"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="alb-13-TD3" firstAttribute="leading" secondItem="aDq-3k-80J" secondAttribute="trailing" constant="10" id="1Y6-FJ-jLb"/>
+                <constraint firstAttribute="bottom" secondItem="aDq-3k-80J" secondAttribute="bottom" constant="4" id="DZv-1n-ChK"/>
+                <constraint firstAttribute="bottom" secondItem="alb-13-TD3" secondAttribute="bottom" constant="4" id="HBh-96-eD8"/>
+                <constraint firstAttribute="centerX" secondItem="0Ci-fA-TUZ" secondAttribute="centerX" id="Ony-jO-7nX"/>
+                <constraint firstItem="OIV-4O-7zG" firstAttribute="leading" secondItem="alb-13-TD3" secondAttribute="trailing" constant="10" id="Rdd-D4-MT3"/>
+                <constraint firstAttribute="centerY" secondItem="0Ci-fA-TUZ" secondAttribute="centerY" id="Ucy-fq-1c3"/>
+                <constraint firstAttribute="centerX" secondItem="alb-13-TD3" secondAttribute="centerX" id="eSg-En-sHq"/>
+                <constraint firstAttribute="bottom" secondItem="OIV-4O-7zG" secondAttribute="bottom" constant="4" id="lAp-3C-9dl"/>
+            </constraints>
+            <point key="canvasLocation" x="539" y="258"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

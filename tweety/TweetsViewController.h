@@ -10,8 +10,13 @@
 #import "ComposeViewController.h"
 #import "TweetDetailViewController.h"
 
+@protocol TweetsMenuButtonDelegate
+- (void)toggleHamburgerMenu;
+@end
+
 @interface TweetsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, TweetSenderDelegate, TweetReplyDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tweetList;
 @property (strong, nonatomic) NSString* operation;
+@property (strong, nonatomic) id<TweetsMenuButtonDelegate> delegate;
 @end

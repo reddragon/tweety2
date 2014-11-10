@@ -21,9 +21,12 @@ extern NSString* const UserDidLogoutNotification;
 @property NSInteger numFollowers;
 @property NSInteger numFollowing;
 @property NSInteger numTweets;
+@property NSInteger numFavorites;
+@property NSString* location;
 @property NSString* userId;
 
 - (id)initWithDictionary:(NSDictionary*)dictionary;
+- (NSDictionary*) getDictionary;
 + (User*)user;
 + (void)setUser:(User*)user;
 + (void)logout;

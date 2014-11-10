@@ -12,6 +12,7 @@
 #import "FormatterKit/TTTTimeIntervalFormatter.h"
 #import "ComposeViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "ProfileViewController.h"
 
 @interface TweetViewCell ()
 @property (weak, nonatomic) UIViewController* parent;
@@ -94,7 +95,18 @@
     self.profileImage.layer.borderWidth = 3.0f;
     self.profileImage.layer.borderColor = [UIColor colorWithRed:220/255.0 green:235/255.0 blue:252.0/255.0 alpha:1.0].CGColor;
     
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onTap:)];
+    [self.profileImage addGestureRecognizer:tapGesture];
+    [self.profileImage setUserInteractionEnabled:YES];
     [self setButtonImages];
+}
+
+- (void)onTap:(UITapGestureRecognizer*)sender {
+    if (sender.state == UIGestureRecognizerStateEnded) {
+        NSLog(@"Tap fire for user: %@", self.tweet.user.name);
+        ProfileViewController* pvc = [[ProfileViewController alloc] initWithUser:self.tweet.user];
+        [self.parent.navigationController pushViewController:pvc animated:YES];
+    }
 }
 
 - (void)setButtonImages {

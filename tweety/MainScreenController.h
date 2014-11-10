@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "HamburgerMenuController.h"
+#import "TweetsViewController.h"
 
-@interface MainScreenController : UIViewController<HamburgerMenuDelegate>
+@interface MainScreenController : UIViewController<HamburgerMenuDelegate, TweetsMenuButtonDelegate>
 
 @end

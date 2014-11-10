@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 
 @interface ProfileViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
-
+- (id)initWithUser:(User*)user;
 @end

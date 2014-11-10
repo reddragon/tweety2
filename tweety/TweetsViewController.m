@@ -50,9 +50,10 @@
     if ([self.operation isEqualToString:@"home"]) {
         self.tweetList.tableFooterView = tableFooterView;
         UIBarButtonItem* composeButton = [[UIBarButtonItem alloc] initWithTitle:@"Compose" style:UIBarButtonItemStylePlain target:self action:@selector(onCompose:)];
-        UIBarButtonItem* logoutButton = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(onLogout:)];
+        UIBarButtonItem* menuButton = [[UIBarButtonItem alloc] initWithTitle:@"≡" style:UIBarButtonItemStylePlain target:self action:@selector(onMenuButton:)];
+        
     
-        self.navigationItem.leftBarButtonItem = logoutButton;
+        self.navigationItem.leftBarButtonItem = menuButton;
         self.navigationItem.rightBarButtonItem = composeButton;
         self.navigationItem.title = @"Home";
     } else if ([self.operation isEqualToString:@"mentions"]) {
@@ -84,8 +85,6 @@
             }
             [self.tweets removeObjectsInArray:fakeArray];
             
-            NSLog(@"Number of tweets received: %lu, size before: %lu", tweets.count, self.tweets.count);
-            
             if (refreshFromTop) {
                 NSIndexSet *indexes = [NSIndexSet indexSetWithIndexesInRange:
                                        NSMakeRange(0, tweets.count)];
@@ -93,7 +92,6 @@
             } else {
                 [self.tweets addObjectsFromArray:tweets];
             }
-            NSLog(@"Tweet list final size: %ld", self.tweets.count);
             [self.tweetList reloadData];
             [self.tweetList reloadData];
         } else {
@@ -132,8 +130,7 @@
     // self.prototypeCell.tweetText.text = t.text;
     CGSize size = [self.prototypeBusinessCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
     return size.height + 1;
-}
-*/
+} */
 
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -166,8 +163,10 @@
 }
 */
 
-- (IBAction)onLogout:(id)sender {
-    [User logout];
+- (IBAction)onMenuButton:(id)sender {
+    if (self.delegate != nil) {
+        [self.delegate toggleHamburgerMenu];
+    }
 }
 
 - (IBAction)onCompose:(id)sender {

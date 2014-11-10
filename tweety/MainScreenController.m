@@ -17,12 +17,14 @@
 @property UIPanGestureRecognizer* panGesture;
 @property (strong, nonatomic) IBOutlet UIView *containerView;
 @property CGSize menuSize;
+@property BOOL menuExpanded;
 @end
 
 @implementation MainScreenController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.menuExpanded = NO;
     CGRect frame = self.containerView.bounds;
     CGRect frame2 = frame;
     
@@ -32,6 +34,7 @@
     
     frame.origin.x = self.menuSize.width;
     TweetsViewController* tvc = [[TweetsViewController alloc] init];
+    tvc.delegate = self;
     UINavigationController* nvc = [[UINavigationController alloc] initWithRootViewController:tvc];
     nvc.navigationBar.barTintColor = [UIColor colorWithRed:85/255.0 green:172/255.0 blue:238.0/255.0 alpha:1.0];
     nvc.navigationBar.tintColor = [UIColor whiteColor];
@@ -61,6 +64,7 @@
 }
 
 - (void) foldMenu {
+    self.menuExpanded = NO;
     [UIView animateWithDuration:0.4 animations:^{
         CGRect frame1 = self.menuVC.view.frame;
         frame1.origin.x -= self.menuSize.width;
@@ -73,6 +77,7 @@
 }
 
 - (void) expandMenu {
+    self.menuExpanded = YES;
     [UIView animateWithDuration:0.4 animations:^{
         CGRect frame1 = self.menuVC.view.frame;
         frame1.origin.x += self.menuSize.width;
@@ -83,6 +88,14 @@
         self.contentVC.view.frame = frame2;
         
     }];
+}
+
+- (void)toggleHamburgerMenu {
+    if (self.menuExpanded) {
+        [self foldMenu];
+    } else {
+        [self expandMenu];
+    }
 }
 
 - (void)onMentions {
@@ -101,6 +114,10 @@
     // mvc.operation = @"mentions";
     UINavigationController* nvc = (UINavigationController*) self.contentVC;
     [nvc pushViewController:pvc animated:YES ];
+}
+
+- (void)onLogout {
+    [User logout];
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle{

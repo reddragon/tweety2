@@ -12,6 +12,7 @@
 
 - (void)onMentions;
 - (void)onProfile;
+- (void)onLogout;
 
 @end
 

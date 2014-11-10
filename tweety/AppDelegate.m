@@ -27,23 +27,17 @@
     [self.window makeKeyAndVisible];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDidLogout) name:UserDidLogoutNotification object:nil];
     
+    
     User* currentUser = [User user];
-    MainScreenController* msc = [[MainScreenController alloc] init];
-    self.window.rootViewController = msc;
-    /*
     if (currentUser != nil) {
         NSLog(@"Welcome %@", currentUser.name);
-        TweetsViewController* tvc = [[TweetsViewController alloc] init];
-        UINavigationController* nc = [[UINavigationController alloc] initWithRootViewController:tvc];
-        nc.navigationBar.barTintColor = [UIColor colorWithRed:85/255.0 green:172/255.0 blue:238.0/255.0 alpha:1.0];
-        nc.navigationBar.tintColor = [UIColor whiteColor];
-        [nc.navigationBar setBarStyle:UIStatusBarStyleLightContent];
-        self.window.rootViewController = nc;
+        MainScreenController* msc = [[MainScreenController alloc] init];
+        self.window.rootViewController = msc;
     } else {
         NSLog(@"Not logged in");
         LoginViewController* lvc = [[LoginViewController alloc] init];
         self.window.rootViewController = lvc;
-    } */
+    }
     
     return YES;
 }

@@ -20,7 +20,7 @@
         NSDateFormatter* formatter = [[NSDateFormatter alloc]init];
         formatter.dateFormat = @"EEE MMM dd hh:mm:ss Z yyyy";
         self.createdAt = [formatter dateFromString:createdAt];
-        NSLog(@"Created at: %@ %@", createdAt, self.createdAt);
+        // NSLog(@"Created at: %@ %@", createdAt, self.createdAt);
         
         NSString* imageURLStr = dictionary[@"user"][@"profile_image_url"];
         self.imageURL = [NSURL URLWithString:imageURLStr];
@@ -58,7 +58,7 @@
         self.imageURL = user.profileImageUrl;
         self.biggerImageURL = user.profileImageUrl;
         self.text = text;
-        NSLog(@"User name: %@, url: %@", self.realName, self.imageURL);
+        // NSLog(@"User name: %@, url: %@", self.realName, self.imageURL);
     }
     return self;
 }

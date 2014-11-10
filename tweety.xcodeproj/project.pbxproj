@@ -23,6 +23,13 @@
 		C63BEB381A00972A009F4B69 /* TweetViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C63BEB361A00972A009F4B69 /* TweetViewCell.m */; };
 		C63BEB391A00972A009F4B69 /* TweetViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C63BEB371A00972A009F4B69 /* TweetViewCell.xib */; };
 		C689D94D1A0716FB005BDE7D /* TimeAbbreviator.m in Sources */ = {isa = PBXBuildFile; fileRef = C689D94C1A0716FB005BDE7D /* TimeAbbreviator.m */; };
+		C6BC660F1A10411F00484AE4 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BC660D1A10411F00484AE4 /* FriendsViewController.m */; };
+		C6BC66101A10411F00484AE4 /* FriendsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6BC660E1A10411F00484AE4 /* FriendsViewController.xib */; };
+		C6BC66141A10419D00484AE4 /* TweetCountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BC66121A10419D00484AE4 /* TweetCountViewController.m */; };
+		C6BC66151A10419D00484AE4 /* TweetCountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6BC66131A10419D00484AE4 /* TweetCountViewController.xib */; };
+		C6BC66191A104DE800484AE4 /* MiscellaneousViewCounter.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BC66171A104DE800484AE4 /* MiscellaneousViewCounter.m */; };
+		C6BC661A1A104DE800484AE4 /* MiscellaneousViewCounter.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6BC66181A104DE800484AE4 /* MiscellaneousViewCounter.xib */; };
+		C6BC661D1A1079EE00484AE4 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = C6BC661C1A1079EE00484AE4 /* Utils.m */; };
 		C6D3E6601A0DEA640095628A /* MenuViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D3E65E1A0DEA640095628A /* MenuViewCell.m */; };
 		C6D3E6611A0DEA640095628A /* MenuViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6D3E65F1A0DEA640095628A /* MenuViewCell.xib */; };
 		C6D3E6651A0DF93F0095628A /* HamburgerMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D3E6631A0DF93F0095628A /* HamburgerMenuController.m */; };
@@ -77,6 +84,17 @@
 		C63BEB371A00972A009F4B69 /* TweetViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetViewCell.xib; sourceTree = "<group>"; };
 		C689D94B1A0716FB005BDE7D /* TimeAbbreviator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeAbbreviator.h; sourceTree = "<group>"; };
 		C689D94C1A0716FB005BDE7D /* TimeAbbreviator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeAbbreviator.m; sourceTree = "<group>"; };
+		C6BC660C1A10411F00484AE4 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
+		C6BC660D1A10411F00484AE4 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
+		C6BC660E1A10411F00484AE4 /* FriendsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsViewController.xib; sourceTree = "<group>"; };
+		C6BC66111A10419D00484AE4 /* TweetCountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetCountViewController.h; sourceTree = "<group>"; };
+		C6BC66121A10419D00484AE4 /* TweetCountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetCountViewController.m; sourceTree = "<group>"; };
+		C6BC66131A10419D00484AE4 /* TweetCountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TweetCountViewController.xib; sourceTree = "<group>"; };
+		C6BC66161A104DE800484AE4 /* MiscellaneousViewCounter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiscellaneousViewCounter.h; sourceTree = "<group>"; };
+		C6BC66171A104DE800484AE4 /* MiscellaneousViewCounter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiscellaneousViewCounter.m; sourceTree = "<group>"; };
+		C6BC66181A104DE800484AE4 /* MiscellaneousViewCounter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MiscellaneousViewCounter.xib; sourceTree = "<group>"; };
+		C6BC661B1A1079EE00484AE4 /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		C6BC661C1A1079EE00484AE4 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		C6D3E65D1A0DEA640095628A /* MenuViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewCell.h; sourceTree = "<group>"; };
 		C6D3E65E1A0DEA640095628A /* MenuViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewCell.m; sourceTree = "<group>"; };
 		C6D3E65F1A0DEA640095628A /* MenuViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewCell.xib; sourceTree = "<group>"; };
@@ -157,6 +175,7 @@
 		C62DCDC019FF590200D8F900 /* tweety */ = {
 			isa = PBXGroup;
 			children = (
+				C6BC66081A0FF32400484AE4 /* Profile */,
 				C6D3E6781A0E7CAE0095628A /* Others */,
 				C6D3E6771A0E7C6E0095628A /* MainScreen */,
 				C6D3E6761A0E7C320095628A /* Login */,
@@ -215,8 +234,29 @@
 				C62DCDED19FF5E4800D8F900 /* TwitterClient.m */,
 				C689D94B1A0716FB005BDE7D /* TimeAbbreviator.h */,
 				C689D94C1A0716FB005BDE7D /* TimeAbbreviator.m */,
+				C6BC661B1A1079EE00484AE4 /* Utils.h */,
+				C6BC661C1A1079EE00484AE4 /* Utils.m */,
 			);
 			name = Helpers;
+			sourceTree = "<group>";
+		};
+		C6BC66081A0FF32400484AE4 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C6D3E67F1A0E9C0B0095628A /* ProfileViewController.h */,
+				C6D3E6801A0E9C0B0095628A /* ProfileViewController.m */,
+				C6D3E6811A0E9C0B0095628A /* ProfileViewController.xib */,
+				C6BC660C1A10411F00484AE4 /* FriendsViewController.h */,
+				C6BC660D1A10411F00484AE4 /* FriendsViewController.m */,
+				C6BC660E1A10411F00484AE4 /* FriendsViewController.xib */,
+				C6BC66111A10419D00484AE4 /* TweetCountViewController.h */,
+				C6BC66121A10419D00484AE4 /* TweetCountViewController.m */,
+				C6BC66131A10419D00484AE4 /* TweetCountViewController.xib */,
+				C6BC66161A104DE800484AE4 /* MiscellaneousViewCounter.h */,
+				C6BC66171A104DE800484AE4 /* MiscellaneousViewCounter.m */,
+				C6BC66181A104DE800484AE4 /* MiscellaneousViewCounter.xib */,
+			);
+			name = Profile;
 			sourceTree = "<group>";
 		};
 		C6D3E6761A0E7C320095628A /* Login */ = {
@@ -255,9 +295,6 @@
 				C6F315991A00AB6B00715504 /* ComposeViewController.h */,
 				C6F3159A1A00AB6B00715504 /* ComposeViewController.m */,
 				C6F3159B1A00AB6B00715504 /* ComposeViewController.xib */,
-				C6D3E67F1A0E9C0B0095628A /* ProfileViewController.h */,
-				C6D3E6801A0E9C0B0095628A /* ProfileViewController.m */,
-				C6D3E6811A0E9C0B0095628A /* ProfileViewController.xib */,
 			);
 			name = Others;
 			sourceTree = "<group>";
@@ -359,14 +396,17 @@
 			files = (
 				C63BEB3419FF80B5009F4B69 /* TweetsViewController.xib in Resources */,
 				C6F315981A00A4D700715504 /* TweetDetailViewController.xib in Resources */,
+				C6BC66151A10419D00484AE4 /* TweetCountViewController.xib in Resources */,
 				C62DCDD219FF590200D8F900 /* LaunchScreen.xib in Resources */,
 				C63BEB391A00972A009F4B69 /* TweetViewCell.xib in Resources */,
 				C6D3E6751A0DFC550095628A /* MainScreenController.xib in Resources */,
 				C6F3159D1A00AB6B00715504 /* ComposeViewController.xib in Resources */,
 				C6D3E6831A0E9C0B0095628A /* ProfileViewController.xib in Resources */,
 				C62DCDCF19FF590200D8F900 /* Images.xcassets in Resources */,
+				C6BC66101A10411F00484AE4 /* FriendsViewController.xib in Resources */,
 				C6D3E6611A0DEA640095628A /* MenuViewCell.xib in Resources */,
 				C6D3E6661A0DF93F0095628A /* HamburgerMenuController.xib in Resources */,
+				C6BC661A1A104DE800484AE4 /* MiscellaneousViewCounter.xib in Resources */,
 				C62DCDEB19FF5D3F00D8F900 /* LoginViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,14 +462,18 @@
 				C62DCDC719FF590200D8F900 /* AppDelegate.m in Sources */,
 				C6D3E6821A0E9C0B0095628A /* ProfileViewController.m in Sources */,
 				C62DCDF519FF68D500D8F900 /* User.m in Sources */,
+				C6BC66191A104DE800484AE4 /* MiscellaneousViewCounter.m in Sources */,
 				C6D3E6601A0DEA640095628A /* MenuViewCell.m in Sources */,
 				C6D3E6651A0DF93F0095628A /* HamburgerMenuController.m in Sources */,
 				C6F3159C1A00AB6B00715504 /* ComposeViewController.m in Sources */,
 				C689D94D1A0716FB005BDE7D /* TimeAbbreviator.m in Sources */,
 				C62DCDF219FF68CB00D8F900 /* Tweet.m in Sources */,
+				C6BC66141A10419D00484AE4 /* TweetCountViewController.m in Sources */,
+				C6BC661D1A1079EE00484AE4 /* Utils.m in Sources */,
 				C62DCDC419FF590200D8F900 /* main.m in Sources */,
 				C6F315971A00A4D700715504 /* TweetDetailViewController.m in Sources */,
 				C6D3E6741A0DFC550095628A /* MainScreenController.m in Sources */,
+				C6BC660F1A10411F00484AE4 /* FriendsViewController.m in Sources */,
 				C62DCDEA19FF5D3F00D8F900 /* LoginViewController.m in Sources */,
 				C63BEB381A00972A009F4B69 /* TweetViewCell.m in Sources */,
 				C63BEB3319FF80B5009F4B69 /* TweetsViewController.m in Sources */,
