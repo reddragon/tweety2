@@ -15,7 +15,7 @@ Time spent: `10 hours`
 #### Profile page
 - [X] Contains the user header view
 - [X] Contains a section with the users basic stats: # tweets, # following, # followers
-- [X] Optional: Implement the paging view for the user description (Not sure what you meant by this, so I paginated the user info [following-follower counts, tweet counts, location, etc.] (manually added that dots on the bottom of the view, which was cumbersome).
+- [X] Optional: Implement the paging view for the user description (Not sure what you meant by this, so I paginated the user info (following-follower counts, tweet counts, location, etc. Manually added that dots on the bottom of the view, which was cumbersome).
 - [ ] Optional: As the paging view moves, increase the opacity of the background screen. See the actual Twitter app for this effect
 - [X] Optional: Pulling down the profile page should blur and resize the header image (Somewhat. I did not blur the image, but I got it to resize)
 
