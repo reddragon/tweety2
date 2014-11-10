@@ -21,7 +21,6 @@ Time spent: `10 hours`
 
 #### Home Timeline
 - [X] Tapping on a user image should bring up that user's profile page
-- 
 
 #### Optional: Account switching
 - [ ] Long press on tab bar to bring up Account view with animation
