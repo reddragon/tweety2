@@ -7,8 +7,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController">
             <connections>
                 <outlet property="bgImage" destination="3N0-oh-iRz" id="57e-AN-u58"/>
+                <outlet property="bgImg" destination="3N0-oh-iRz" id="C0U-75-Tsi"/>
                 <outlet property="paginatedInfoView" destination="SgX-nG-NXY" id="M8W-Gu-hHo"/>
                 <outlet property="profileImage" destination="iIx-6U-iFb" id="nH8-5d-Lz9"/>
+                <outlet property="profileImgContainer" destination="H5A-Ti-Rsi" id="RAJ-0I-TWi"/>
                 <outlet property="screenName" destination="2uk-P8-E9L" id="arP-eT-OO8"/>
                 <outlet property="tweetList" destination="Bs7-tf-YtH" id="UtP-4z-r4I"/>
                 <outlet property="userName" destination="rbL-gS-hr8" id="u9x-71-5pk"/>
@@ -21,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Bs7-tf-YtH">
-                    <rect key="frame" x="0.0" y="180" width="320" height="388"/>
+                    <rect key="frame" x="0.0" y="170" width="320" height="398"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H5A-Ti-Rsi" userLabel="ProfileImageContainerView">
@@ -50,25 +52,25 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.1067406397" green="0.19779112679999999" blue="0.34363042090000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstItem="rbL-gS-hr8" firstAttribute="top" secondItem="H5A-Ti-Rsi" secondAttribute="top" constant="70" id="30p-os-IH3"/>
                         <constraint firstItem="iIx-6U-iFb" firstAttribute="top" secondItem="H5A-Ti-Rsi" secondAttribute="top" constant="50" id="9eX-Y0-XYv"/>
                         <constraint firstItem="3N0-oh-iRz" firstAttribute="leading" secondItem="H5A-Ti-Rsi" secondAttribute="leading" id="B1E-Al-AoM"/>
+                        <constraint firstAttribute="bottom" secondItem="2uk-P8-E9L" secondAttribute="bottom" constant="5" id="E5D-Yc-jL4"/>
                         <constraint firstAttribute="height" constant="120" id="GHI-Tg-hOx"/>
                         <constraint firstItem="3N0-oh-iRz" firstAttribute="top" secondItem="H5A-Ti-Rsi" secondAttribute="top" id="V4P-Fw-6cE"/>
+                        <constraint firstItem="2uk-P8-E9L" firstAttribute="top" secondItem="rbL-gS-hr8" secondAttribute="bottom" constant="5" id="XXI-S9-UYP"/>
                         <constraint firstItem="rbL-gS-hr8" firstAttribute="leading" secondItem="iIx-6U-iFb" secondAttribute="trailing" constant="5" id="eag-Xs-3Gb"/>
                         <constraint firstAttribute="trailing" secondItem="3N0-oh-iRz" secondAttribute="trailing" id="gzK-II-88D"/>
                         <constraint firstItem="iIx-6U-iFb" firstAttribute="leading" secondItem="H5A-Ti-Rsi" secondAttribute="leading" constant="20" id="h35-oz-GTj"/>
-                        <constraint firstItem="2uk-P8-E9L" firstAttribute="top" secondItem="rbL-gS-hr8" secondAttribute="bottom" constant="5" id="j9h-vz-Z6c"/>
                         <constraint firstAttribute="bottom" secondItem="3N0-oh-iRz" secondAttribute="bottom" constant="50" id="wB5-1s-ZE1"/>
                         <constraint firstItem="2uk-P8-E9L" firstAttribute="leading" secondItem="iIx-6U-iFb" secondAttribute="trailing" constant="5" id="ypH-6r-qll"/>
                     </constraints>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SgX-nG-NXY">
-                    <rect key="frame" x="0.0" y="120" width="320" height="60"/>
+                    <rect key="frame" x="0.0" y="120" width="320" height="50"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="60" id="V2Q-q4-ju1"/>
+                        <constraint firstAttribute="height" constant="50" id="V2Q-q4-ju1"/>
                     </constraints>
                 </scrollView>
             </subviews>

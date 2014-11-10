@@ -25,10 +25,15 @@
 @property (strong, nonatomic) IBOutlet UILabel *screenName;
 @property (strong, nonatomic) NSMutableArray* tweets;
 @property (strong, nonatomic) IBOutlet UIScrollView *paginatedInfoView;
+@property (strong, nonatomic) IBOutlet UIView *profileImgContainer;
 
 @property (strong, nonatomic) FriendsViewController* fvc;
 @property (strong, nonatomic) TweetCountViewController* tvc;
 @property (strong, nonatomic) MiscellaneousViewCounter* mvc;
+@property (strong, nonatomic) IBOutlet UIImageView *bgImg;
+
+@property CGRect bgInitFrame;
+@property CGRect bgInitBounds;
 @end
 
 @implementation ProfileViewController
@@ -46,10 +51,6 @@
         self.user = [User user];
     }
     self.tweets = [[NSMutableArray alloc] init];
-    /*
-    [self.followersCount setText:[@(self.user.numFollowers) stringValue]];
-    [self.followingCount setText:[@(self.user.numFollowing) stringValue]];
-    */
     [self.profileImage setImageWithURL:self.user.profileImageUrl];
     [self.profileImage.layer setCornerRadius:self.profileImage.frame.size.width / 2];
     self.profileImage.clipsToBounds = YES;
@@ -68,15 +69,6 @@
             NSLog(@"Seems like some error: %@", connectionError);
         }
     }];
-    
-    /*
-    [self.bgImage setImageWithURL:self.user.bgImageUrl];
-    [self.bgImage setImageWithURLRequest:[NSURLRequest requestWithURL:self.user.bgImageUrl] placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
-        NSLog(@"Request finished!");
-    } failure:];
-    */
-    
-    // [self.bgImage set]
     
     [self.tweetList registerNib:[UINib nibWithNibName:@"TweetViewCell" bundle:nil] forCellReuseIdentifier:@"TweetViewCell"];
     self.tweetList.delegate = self;
@@ -108,6 +100,38 @@
     
     [self loadData:NO];
     // NSLog(@"Dict: %@", [self.user getDictionary]);
+    
+    UIPanGestureRecognizer* panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(onBgPan:)];
+    [self.profileImgContainer addGestureRecognizer:panGesture];
+    // self.bgInitBounds = self.profileImgContainer.bounds;
+    // self.bgInitFrame = self.profileImgContainer.frame;
+    self.bgInitFrame = self.bgImage.frame;
+    self.bgInitBounds = self.bgImage.bounds;
+}
+
+- (void)onBgPan:(UIPanGestureRecognizer*)sender {
+    CGPoint velocity = [sender velocityInView:self.profileImgContainer];
+    CGRect frame = self.bgImage.frame;
+     
+    // NSLog(@"onBgPanTriggered! %f %f", velocity.x, velocity.y);
+    if (sender.state == UIGestureRecognizerStateBegan) {
+        NSLog(@"The state began");
+    } else if (sender.state == UIGestureRecognizerStateChanged) {
+        if (velocity.y > 0) {
+            frame.size.height += 2;
+            self.bgImage.frame = frame;
+        } else if (velocity.y < 0 && (frame.size.height > self.bgInitBounds.size.height)) {
+            frame.size.height -= 2;
+            self.bgImage.frame = frame;
+        }
+        NSLog(@"The state continues");
+    } else if (sender.state == UIGestureRecognizerStateEnded) {
+        NSLog(@"The state ended");
+        [UIView animateWithDuration:0.4 delay:0.1 usingSpringWithDamping:0.3 initialSpringVelocity:30 options:0 animations:^{
+            self.bgImage.frame = self.bgInitFrame;
+        } completion:nil];
+        
+    }
 }
 
 - (void)loadData:(BOOL)refreshFromTop {
