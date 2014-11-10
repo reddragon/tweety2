@@ -1,7 +1,7 @@
 tweety2
 =======
 
-The Twitter iOS clone (tweety) with Animations!
+The Twitter iOS clone (tweety) with Gestures + Animations! This is the beefed up version of the [tweety](https://github.com/reddragon/tweety) project, which was a simple clone of Twitter.
 
 Time spent: `10 hours`
 
